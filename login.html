@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shree Ramdevji Mandir Rajpur</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #fff8f0;
+        }
+
+        header {
+            background-color: #c62828;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #e53935;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .hero {
+            background: url("bg.jpg") no-repeat center center;
+            background-size: cover;
+            height: 570px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-shadow: 2px 2px 5px #000;
+            font-size: 2em;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .content h2 {
+            color: #b71c1c;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .gallery img {
+            width: 250px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            background-color: #c62828;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Shree Ramdevji Mandir Rajpur</h1>
+    <p>Welcome to the official website of our Ramdevji temple</p>
+</header>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#about">About Temple</a>
+    <a href="#events">Events</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<div class="hero">
+    Jai Ramdevji🙏
+</div>
+
+<div class="content" id="about">
+    <h2>About the Temple</h2>
+    <img src="bg.jpg" alt="Lord Ramdevji" style="width:300px; float:right; margin-left:20px;">
+    <p>Shree Ram Mandir is a sacred space for spiritual connection. The image above is of Lord Ramdevji, worshipped with great devotion by many across Gujarat.</p>
+</div>
+
+<div class="content" id="events">
+    <h2>Upcoming Events</h2>
+    <ul>
+        <li>🌸 Shravan Bij – July 25, 2025</li>
+        <li>🌟 Nvaratri Mahautasv – Aug 24, 2025</li>
+        <li>🎉 Neja Utasav – Sep 5, 2025</li>
+    </ul>
+</div>
+
+<div class="content" id="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery">
+        <img src="img4.jpg" alt="Ramdevji Murti 1">
+        <img src="RAMDEVJI.jpg" alt="Temple View 2">
+        <img src="img-1.jpg" alt="Event Photo 3">
+        <img src="img2.jpg" alt="Bhajan Sandhya">
+        <img src="img3.jpg" alt="Ram Navami Celebration">
+    </div>
+</div>
+
+<div class="content" id="contact">
+    <h2>Contact Us</h2>
+    <p>📍 Shree Ramdevji Mandir Rajpur, Mahadevgram, Modasa, Arvalli, Gujarat<br>
+       📞 +91 95376 56362<br>
+       📧 info@shreeramdevjimandir.in</p>
+
+       <p>
+        📍 Shree Ramdevji Mandir Rajpur, Mahadevgram, Modasa, Arvalli, Gujarat<br>
+        📞 +91 95376 56362<br>
+        📧 info@shreeramdevjimandir.in
+    </p>
+    
+    <h3>Send Inquiry</h3>
+    <form id="inquiryForm" style="max-width: 500px;">
+
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required style="width:100%; padding:8px;"><br><br>
+    
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required style="width:100%; padding:8px;"><br><br>
+    
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" required style="width:100%; padding:8px; height:100px;"></textarea><br><br>
+    
+        <input type="submit" value="Send Inquiry" style="padding:10px 20px; background-color:#c62828; color:white; border:none; cursor:pointer;">
+    </form>
+    
+</div>
+
+<footer>
+    © 2025 Shree Ramdevji Mandir Rajpur. All rights reserved.
+</footer>
+
+<script>
+    document.getElementById('inquiryForm').addEventListener('submit', function(e) {
+        e.preventDefault(); // prevent page reload
+    
+        const formData = new FormData(this);
+    
+        fetch('login.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.text())
+        .then(data => {
+            alert("🙏 Thank you! Your inquiry has been received.");
+            document.getElementById('inquiryForm').reset();
+        })
+        .catch(error => {
+            alert("Something went wrong. Please try again.");
+        });
+    });
+    </script>
+    
+</body>
+</html>
